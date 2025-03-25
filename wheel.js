@@ -19,6 +19,12 @@ let won = 0;
 let freeSpin = 0;
 let first = 0;
 
+function Free()
+{
+    chips += 100;
+    document.cookie = "chips=" + chips +";domain=.evenmorefries.github.io;";
+}
+
 function Start()
 {
     let cookie = document.cookie;
