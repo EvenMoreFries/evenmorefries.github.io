@@ -24,12 +24,11 @@ function reset()
 
 function Start()
 {
-    document.cookie = "chips=200;";
     let cookie = document.cookie;
     //let tempCookie = "chips=2000;";
     //console.log(tempCookie.slice(6).substring(0, tempCookie.length - 7));
-    chips = cookie.slice(6).substring(0, cookie.length - 6);
     chips = 200;
+    chips = cookie.slice(6).substring(0, cookie.length - 6);
     console.log(cookie);
     CreateDeck();
     DealerDraw();

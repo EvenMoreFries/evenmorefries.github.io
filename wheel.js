@@ -21,8 +21,8 @@ let first = 0;
 
 function Start()
 {
-    document.cookie = "chips=200;";
     let cookie = document.cookie;
+    chips = 200;
     chips = cookie.slice(6).substring(0, cookie.length - 6);
     console.log(cookie + " " + cookie.slice(6).substring(0, cookie.length - 6))
     wheelImg.src = "./images/wheel.png";
