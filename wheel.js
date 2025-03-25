@@ -16,7 +16,7 @@ let timeLeft = 0;
 let timeTotal = 0;
 let tiles = [-1, 200, 50, 100, 0, 200, 50, 100, 0, 200, -2, 100, 0, 200, 50, 100, 0, 200, 50, 100, -1];
 let won = 0;
-let freeSpin = 0;
+let cost = 100;
 let first = 0;
 
 function Start()
@@ -84,7 +84,7 @@ function Update()
         {
             chips = 0;
             document.cookie = "chips=" + 0 +"; domain=.evenmorefries.github.io;";
-            freeSpin = 1;
+            cost = 0;
             message = "You're bankrupt! Remember that real gamblers never quit. Here is one free spin."
         }
     }
@@ -98,16 +98,16 @@ function Update()
 
 function Play()
 {
-    if (speed < 0.175) 
+    if (speed > 0.175) 
     {
         return;
     }
-    if (chips >= 100 || freeSpin == 1)
+    if (chips >= cost)
     {
         first = 1;
         chips -= 100;
         document.cookie = "chips=" + chips +"; domain=.evenmorefries.github.io;";
-        freeSpin = 0;
+        cost = 100;
         won = 0;
         speed = 500;
         rot = 0;
