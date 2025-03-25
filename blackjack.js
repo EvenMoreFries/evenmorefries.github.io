@@ -19,16 +19,14 @@ let chips = 200; // load from cookies
 
 function reset()
 {
-    document.cookie = "chips=200;";
+    document.cookie = "chips=200;domain=.evenmorefries.github.io;";
 }
 
 function Start()
 {
     let cookie = document.cookie;
-    //let tempCookie = "chips=2000;";
-    //console.log(tempCookie.slice(6).substring(0, tempCookie.length - 7));
     chips = 200;
-    chips = cookie.slice(6).substring(0, cookie.length - 6);
+    chips = cookie.slice(6).substring(0, cookie.length - 26);
     console.log(cookie);
     CreateDeck();
     DealerDraw();
@@ -131,9 +129,7 @@ function EndGame()
 
 function Update()
 {
-    document.cookie = "chips=" + chips +";";
-    let cookie = document.cookie;
-    console.log(cookie);
+    document.cookie = "chips=" + chips +";domain=.evenmorefries.github.io;";
     chipsText.textContent = "Chips: "+ chips;
     if (!ended)
     {
