@@ -132,9 +132,9 @@ function EndGame()
 
 function Update()
 {
+    document.cookie = "chips=" + chips +";";
     let cookie = document.cookie;
     console.log(cookie);
-    //document.cookie = "chips=" + chips +";";
     chipsText.textContent = "Chips: "+ chips;
     if (!ended)
     {
