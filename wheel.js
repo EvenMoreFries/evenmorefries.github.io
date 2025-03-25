@@ -69,6 +69,7 @@ function Update()
                 prize = GetRandomInt(500, 1500);
             }
             chips += prize;
+            document.cookie = "chips=" + chips +";";
             won = 1;
         }
         if (prize == 0)
@@ -100,6 +101,7 @@ function Play()
     {
         first = 1;
         chips -= 100;
+        document.cookie = "chips=" + chips +";";
         freeSpin = 0;
         won = 0;
         speed = 500;
