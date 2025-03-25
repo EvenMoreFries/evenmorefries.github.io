@@ -28,11 +28,8 @@ function Start()
     let cookie = document.cookie;
     //let tempCookie = "chips=2000;";
     //console.log(tempCookie.slice(6).substring(0, tempCookie.length - 7));
-    chips = cookie.slice(6).substring(0, cookie.length - 7);
-    if (chips == null)
-    {
-        chips = 200;
-    }
+    //chips = cookie.slice(6).substring(0, cookie.length - 7);
+    chips = 200;
     console.log(cookie);
     CreateDeck();
     DealerDraw();
