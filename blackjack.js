@@ -21,7 +21,7 @@ function Start()
 {
     if (document.cookie == "")
     {
-        //document.cookie = "chips=200;";
+        document.cookie = "chips=200;";
     }
     let cookie = document.cookie;
     //let tempCookie = "chips=2000;";
