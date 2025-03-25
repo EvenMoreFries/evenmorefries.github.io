@@ -76,7 +76,7 @@ function Update()
         {
             message = "You won nothing. Remember that real gamblers never quit.";
         }
-        if (prize > 200)
+        if (prize > 200 || prize == -2)
         {
             message = "You won the jackpot of " + prize + " chips! Try your luck again?"
         }
