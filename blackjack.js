@@ -17,6 +17,11 @@ let dDrawBlock = 1;
 let chipsText = document.getElementById("chipsText");
 let chips = 200; // load from cookies
 
+function reset()
+{
+    document.cookie = "chips=200;";
+}
+
 function Start()
 {
     if (document.cookie == "")
