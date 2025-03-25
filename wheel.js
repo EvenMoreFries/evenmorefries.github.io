@@ -18,6 +18,7 @@ let tiles = [-1, 200, 50, 100, 0, 200, 50, 100, 0, 200, -2, 100, 0, 200, 50, 100
 let won = 0;
 let cost = 100;
 let first = 0;
+let going = false;
 
 function Start()
 {
@@ -68,6 +69,7 @@ function Update()
             {
                 prize = GetRandomInt(500, 1500);
             }
+            going = 0;
             chips += prize;
             document.cookie = "chips=" + chips +"; domain=.evenmorefries.github.io;";
             won = 1;
@@ -98,12 +100,13 @@ function Update()
 
 function Play()
 {
-    if (speed > 0.175) 
+    if (going)
     {
         return;
     }
     if (chips >= cost)
     {
+        going = true;
         first = 1;
         chips -= 100;
         document.cookie = "chips=" + chips +"; domain=.evenmorefries.github.io;";
