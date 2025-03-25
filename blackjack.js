@@ -19,14 +19,17 @@ let chips = 200; // load from cookies
 
 function Start()
 {
-    document.cookie = "chips=200;";
+    if (document.cookie == "")
+    {
+        document.cookie = "chips=200;";
+    }
+    let cookie = document.cookie;
+    console.log(cookie);
     CreateDeck();
     DealerDraw();
     DealerDraw();
     PlayerDraw();
     dDrawBlock = 0;
-    let cookie = document.cookie;
-    console.log(cookie);
 }
 
 
@@ -123,6 +126,9 @@ function EndGame()
 
 function Update()
 {
+    let cookie = document.cookie;
+    console.log(cookie);
+    document.cookie = "chips=" + chips +";";
     chipsText.textContent = "Chips: "+ chips;
     if (!ended)
     {

@@ -24,7 +24,8 @@ let chipsText = document.getElementById("chipsText");
 function Start()
 {
     Canvas.width = window.innerWidth;
-    //console.log(document.cookie);
+    let cookie = document.cookie;
+    console.log(cookie);
     CreateHorse();
     CreateHorse();
     CreateHorse();
