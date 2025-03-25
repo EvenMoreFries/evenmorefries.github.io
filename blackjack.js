@@ -21,9 +21,12 @@ function Start()
 {
     if (document.cookie == "")
     {
-        document.cookie = "chips=200;";
+        //document.cookie = "chips=200;";
     }
     let cookie = document.cookie;
+    //let tempCookie = "chips=2000;";
+    //console.log(tempCookie.slice(6).substring(0, tempCookie.length - 7));
+    chips = cookie.slice(6).substring(0, cookie.length - 7);
     console.log(cookie);
     CreateDeck();
     DealerDraw();
