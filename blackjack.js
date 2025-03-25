@@ -24,10 +24,6 @@ function reset()
 
 function Start()
 {
-    if (document.cookie == "")
-    {
-        document.cookie = "chips=200;";
-    }
     document.cookie = "chips=200;";
     let cookie = document.cookie;
     //let tempCookie = "chips=2000;";
@@ -141,7 +137,7 @@ function Update()
 {
     let cookie = document.cookie;
     console.log(cookie);
-    document.cookie = "chips=" + chips +";";
+    //document.cookie = "chips=" + chips +";";
     chipsText.textContent = "Chips: "+ chips;
     if (!ended)
     {
