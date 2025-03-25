@@ -1,0 +1,30 @@
+<head>
+    <meta charset="utf-8">
+    <title>Slots</title>
+    <div class="header">
+      <div>Slots</div>
+      <div id="chipsText">Chips: 100</div>
+  </div>
+    <link rel="stylesheet" href ="styles.css">
+    <br>
+    <style>
+      canvas {
+        border: 0px solid white;
+      }
+    </style>
+    <br>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="600" height="180"></canvas>
+  <br><br>
+  <button type="button" onclick = "Play()">Play</button>
+  <br><br>
+  <div class="name">Slots</div>
+  <div class="desc">Press play to spin, for the price of <b>20 chips</b>.<br>
+    If the machine lands on three of the same symbol, win a <b>small prize</b>.<br>
+    If the machine lands on three lucky sevens, win the <b>jackpot</b>.<br><br>
+  Small Prize: <b>500 chips</b><br>
+  Jackpot: <b>2500 chips</b></div>
+  <br>
+  <script src="slots.js"></script>
+  </body>

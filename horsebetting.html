@@ -1,0 +1,44 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href ="styles.css">
+    <div class="header">
+      <div>Horse Betting</div>
+      <div id="chipsText">Chips: 100</div>
+  </div>
+    <title>Horse Betting</title>
+    <br>
+    <style>
+      canvas {
+        border: 0px solid white;
+      }
+    </style>
+    <br>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="1500" height="255"></canvas>
+  <br>
+  <button type="button" onclick = "IncreaseWager(-100);">-100</button>
+  <button type="button" onclick = "IncreaseWager(-10);">-10</button>
+  <button type="button" onclick = "IncreaseWager(-1);">-1</button>
+  <button type="button" onclick = "IncreaseWager(+1);">+1</button>
+  <button type="button" onclick = "IncreaseWager(+10);">+10</button>
+  <button type="button" onclick = "IncreaseWager(+100);">+100</button>
+  <br>
+<br>
+  <button type="button" id = "Horse1" onclick = "Wager(1);">1</button>
+  <button type="button" id = "Horse2" onclick = "Wager(2);">2</button>
+  <button type="button" id = "Horse3" onclick = "Wager(3);">3</button>
+  <button type="button" id = "Horse4" onclick = "Wager(4);">4</button>
+  <br>
+  <br>
+  <button type="button" id = "begin" onclick = "Begin();">Begin Race</button>
+  <br><br>
+  <div class="name">Horse Betting</div>
+  <div class="desc">Select a wager of <b>chips</b>, then select a <b>horse</b>.<br>
+    Depending on which place your selected horse finishes, earn <b>chips</b>.<br><br>
+  First place: <b>X2 chips</b><br>
+  Second place: <b>X1 chips</b><br>
+  Third place: <b>X0.5 chips</b><br>
+  Fourth place: <b>X0 chips</b><br>
+  <script src="horses.js"></script>
+  </body>

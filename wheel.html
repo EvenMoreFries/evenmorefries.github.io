@@ -1,0 +1,36 @@
+<head>
+    <meta charset="utf-8">
+    <title>Wheel Of Fortune</title>
+    <div class="header">
+      <div>Wheel Of Fortune</div>
+      <div id="chipsText">Chips: 100</div>
+  </div>
+    <link rel="stylesheet" href ="styles.css">
+    <br>
+    <style>
+      canvas {
+        border: 0px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <img src = "images/arrow.png" width="450" height="20"></img><br>
+    <img id = "wheel" src = "images/wheel.png" width="450" height="450"></img>
+    <br>
+    <style>
+      canvas {
+        border: 0px solid white;
+      }
+    </style>
+    <canvas id="gameCanvas" width="1440" height="32"></canvas>
+  <br>
+  <button type="button" onclick = "Play()">Play</button>
+  <br><br>
+  <div class="name">Wheel Of Fortune</div>
+  <div class="desc">Press <b>play</b> to spin the wheel.<br>
+  Win <b>chips</b> based where the wheel lands.<br>
+    If you land on <b>jackpot</b>, you will win a random, large prize.<br>
+    But if you land on <b>bankrupt</b>, you lose all of your chips.</div>
+  <br>
+  <script src="wheel.js"></script>
+  </body>

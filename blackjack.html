@@ -1,0 +1,56 @@
+<head>
+    <meta charset="utf-8">
+    <title>Blackjack</title>
+    <div class="header">
+      <div class="row">
+        <div>
+          <button class ="gamebutton" onclick="OpenGames()">+</button>
+          <div id="gameDropdown" class="dropdown-content">
+            <a href="#">Home</a>
+            <a href="#">Horses Betting</a>
+            <a href="#">Slot Machine</a>
+            <a href="#">Wheel of Fortune</a>
+          </div>
+        </div>
+        <div class="columntitle">
+           Blackjack
+        </div>
+        <div class="columnchips">
+          <div id="chipsText">Chips: 100</div>
+        </div>
+      </div>
+  </div>
+    <link rel="stylesheet" href ="styles.css">
+    <br>
+    <style>
+      canvas {
+        border: 0px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="720" height="200"></canvas>
+    <br>
+    <button type="button" id = "HitButton" onclick = "PlayerDraw();">Hit</button>
+    <button type="button" id = "StayButton" onclick = "EndGame();">Stay</button>
+    <br><br>
+    <button type="button" onclick = "IncreaseWager(-100);">-100</button>
+    <button type="button" onclick = "IncreaseWager(-10);">-10</button>
+    <button type="button" onclick = "IncreaseWager(-1);">-1</button>
+    <button type="button" onclick = "IncreaseWager(+1);">+1</button>
+    <button type="button" onclick = "IncreaseWager(+10);">+10</button>
+    <button type="button" onclick = "IncreaseWager(+100);">+100</button>
+    <br><br>
+    <button type="button" onclick = "StartGame();">Confirm Wager</button>
+    <br><br>
+    <div class="name">Blackjack</div>
+    <div class="desc">To start playing, select an amount of <b>chips</b> to wager, then confirm wager.<br>
+      You can <b>hit</b> to draw another card, or <b>stay</b> to end the game.<br>
+      If you score less than the dealer, you lose. If you score more than 21, you lose.<br>
+      If you score more than the dealer, you win. Amount of chips won scales with your wager.<br><br>
+    0+ wagered: <b>X1.5 chips</b><br>
+    100+ wagered: <b>X1.75 chips</b><br>
+    200+ wagered: <b>X2 chips</b><br>
+    500+ wagered: <b>X3 chips</b><br></div>
+  <script src="blackjack.js"></script>
+  </body>
