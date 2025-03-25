@@ -26,7 +26,7 @@ function Start()
 {
     let cookie = document.cookie;
     chips = 200;
-    chips = cookie.slice(6).substring(0, cookie.length - 27);
+    chips = cookie.slice(6).substring(0, cookie.length - 6);
     console.log(cookie);
     CreateDeck();
     DealerDraw();
