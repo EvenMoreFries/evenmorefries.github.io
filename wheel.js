@@ -97,6 +97,10 @@ function Update()
 
 function Play()
 {
+    if (speed < 0.175) 
+    {
+        return;
+    }
     if (chips >= 100 || freeSpin == 1)
     {
         first = 1;
