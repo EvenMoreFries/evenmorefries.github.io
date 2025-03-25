@@ -19,6 +19,7 @@ let won = 0;
 let cost = 100;
 let first = 0;
 let going = false;
+let jackpot = 0;
 
 function Start()
 {
@@ -67,7 +68,8 @@ function Update()
         {
             if (prize == -2)
             {
-                prize = GetRandomInt(500, 1500);
+                jackpot = GetRandomInt(500, 1500);
+                prize = jackpot;
             }
             going = 0;
             chips += prize;
@@ -80,7 +82,7 @@ function Update()
         }
         if (prize > 200 || prize == -2)
         {
-            message = "You won the jackpot of " + prize + " chips! Try your luck again?"
+            message = "You won the jackpot of " + jackpot + " chips! Try your luck again?"
         }
         if (prize == -1)
         {
