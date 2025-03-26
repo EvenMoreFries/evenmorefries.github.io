@@ -22,7 +22,7 @@ function Start()
     // load chips from cookies
     let cookie = document.cookie;
     chips = 200;
-    if (cookie.includes("chips="))
+    if (cookie.includes(";"))
     {
         chips = cookie.slice(6).substring(0, cookie.length - 6);
     }
