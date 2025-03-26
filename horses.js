@@ -17,8 +17,8 @@ let pick = 0;
 let time = 0;
 let deltaTime = 0;
 let beaten = 0;
-let figuredBeaten = false;
 let winCount = 0;
+let winnerList = [];
 let chips = 200;
 let chipsText = document.getElementById("chipsText");
 
@@ -104,7 +104,7 @@ function CreateHorse()
 
 function Win()
 {
-    beaten = 4 - beaten;
+    beaten = 3 - winnerList.indexOf(horses[pick - 1]);
     let mult = 0;
     if (beaten == 0)
     {
@@ -123,7 +123,7 @@ function Win()
         mult = 2;
     }
     message2 = "You won " + Math.round(wager * mult) + " chips.";
-    message = "You bet on horse " + pick + ", " + horses[pick - 1].horseName + ", who placed in #" + beaten + ".";
+    message = "You bet on horse " + pick + ", " + horses[pick - 1].horseName + ", who placed in #" + (1 + winnerList.indexOf(horses[pick - 1])) + ".";
     chips += Math.round(wager * mult);
 }
 
@@ -193,9 +193,9 @@ function Update()
         if(horse.x > Canvas.width - 60)
         {
             winCount++;
-            if (horse == horses[pick - 1] && horse.won == false)
+            if (!winnerList.includes(horse))
             {
-                beaten = winCount;
+                winnerList.push(horse);
             }
             horse.won = true;
         }
