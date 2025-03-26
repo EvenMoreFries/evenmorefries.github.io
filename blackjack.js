@@ -107,6 +107,7 @@ function EndGame()
         if (score == dealerScore)
         {
             mult = 1;
+            message = "You drew.";
         }
         chips += Math.floor(wager * mult);
     }    
@@ -119,10 +120,6 @@ function EndGame()
         else
         {
             message = "You lose. You had " + score + ", and the dealer had " + dealerScore + ".";
-        }
-        if (score == dealerScore)
-        {
-            message = "You drew.";
         }
     }
 }

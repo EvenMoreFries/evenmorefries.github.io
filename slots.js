@@ -20,6 +20,12 @@ let chipsText = document.getElementById("chipsText");
 function Start()
 {
     // load chips from cookies
+    let cookie = document.cookie;
+    chips = 200;
+    if (cookie.includes("chips="))
+    {
+        chips = cookie.slice(6).substring(0, cookie.length - 6);
+    }
     time = Date.now();
     CreateSlots();
 }
@@ -107,6 +113,7 @@ function ChoseSymbol()
 
 function Update()
 {
+    document.cookie = "chips=" + chips + "; domain=.evenmorefries.github.io;";
     Context.font = "20px sans-serif";
     let message = ""
     chipsText.textContent = "Chips: "+ chips;

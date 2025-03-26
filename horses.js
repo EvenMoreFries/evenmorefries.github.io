@@ -23,9 +23,13 @@ let chipsText = document.getElementById("chipsText");
 
 function Start()
 {
-    Canvas.width = window.innerWidth;
     let cookie = document.cookie;
-    console.log(cookie);
+    chips = 200;
+    if (cookie.includes("chips="))
+    {
+        chips = cookie.slice(6).substring(0, cookie.length - 6);
+    }
+    Canvas.width = window.innerWidth;
     CreateHorse();
     CreateHorse();
     CreateHorse();
@@ -119,8 +123,9 @@ function Win()
 }
 
 function Update()
-{   
-
+{
+    console.log(beaten);
+    document.cookie = "chips=" + chips + "; domain=.evenmorefries.github.io;";
     chipsText.textContent = "Chips: "+ chips;
     deltaTime = (Date.now() - time) / 1000;
     if (!over)
@@ -184,7 +189,7 @@ function Update()
         {
             winCount++;
             horse.won = true;
-            if (horse = horses[pick - 1])
+            if (horse = horses[pick - 1] && horse.won == false)
             {
                 beaten = winCount;
             }
@@ -193,7 +198,6 @@ function Update()
         {
             horse.currentSpeed = 0;
         }
-        console.log(over + " " + winCount);
         if (winCount == 4)
         {
             if(!over)
@@ -206,19 +210,20 @@ function Update()
         {
             let change = GetRandomInt(0, 10) - 4;
             horse.targetSpeed += (change) / 15;
-            if (horse.targetSpeed < 0.9)
+            if (horse.targetSpeed < 1)
             {
-                horse.targetSpeed = 0.9;
+                horse.targetSpeed = 1;
             }
             if (horse.targetSpeed > 2.4)
             {
                 horse.targetSpeed = 2.4;
             }
         }
-        if (!horse.won)
+        if (!horse.won) 
         {
             horse.x += horse.currentSpeed * deltaTime * 60;
-        horse.y += deltaTime * 3 * horse.yDir * horse.currentSpeed;
+            horse.y += deltaTime * 3 * horse.yDir * horse.currentSpeed;
+        }    
         if (horse.y > 3)
         {
             horse.yDir = -1;
@@ -229,19 +234,16 @@ function Update()
         }
         if (horse.targetSpeed > horse.currentSpeed)
         {
-            horse.currentSpeed += deltaTime / 5;
+            horse.currentSpeed += deltaTime / 3;
         }
         if (horse.targetSpeed < horse.currentSpeed)
         {
-            horse.currentSpeed -= deltaTime / 5;
+            horse.currentSpeed -= deltaTime / 3;
         }
-        }
-       
         });
     }
-    if (changeTimer > 1.5)
+    if (changeTimer > 1.4)
     {
-        //console.log("hawk");
         changeTimer = 0;
     }
     requestAnimationFrame(Update);
