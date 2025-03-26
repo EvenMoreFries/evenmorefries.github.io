@@ -118,7 +118,7 @@ function Win()
         mult = 2;
     }
     message2 = "You won " + Math.round(wager * mult) + " chips.";
-    let place = 4 - beaten;
+    let place = beaten;
     message = "You bet on horse " + pick + ", " + horses[pick - 1].horseName + ", who placed in #" + place + ".";
     chips += Math.round(wager * mult);
 }
