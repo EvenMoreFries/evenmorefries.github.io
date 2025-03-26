@@ -189,7 +189,7 @@ function Update()
         if(horse.x > Canvas.width - 60)
         {
             winCount++;
-            if (horse = horses[pick - 1] && horse.won == false)
+            if (horse == horses[pick - 1] && horse.won == false)
             {
                 beaten = winCount;
             }
