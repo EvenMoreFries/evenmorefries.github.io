@@ -65,7 +65,7 @@ function Wager(horse)
 
 function Begin()
 {
-    if (pick == 0)
+    if (pick == 0 || wager == 0)
     {
         return;
     }
