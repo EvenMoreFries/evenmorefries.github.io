@@ -242,7 +242,7 @@ function Update()
         }
         });
     }
-    if (changeTimer > 1.4)
+    if (changeTimer > 1.5)
     {
         changeTimer = 0;
     }
