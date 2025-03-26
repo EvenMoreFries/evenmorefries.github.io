@@ -104,7 +104,7 @@ function CreateHorse()
 
 function Win()
 {
-    beaten -= 1;
+    beaten = 4 - beaten;
     let mult = 0;
     if (beaten == 0)
     {
@@ -123,8 +123,7 @@ function Win()
         mult = 2;
     }
     message2 = "You won " + Math.round(wager * mult) + " chips.";
-    let place = 4 - beaten;
-    message = "You bet on horse " + pick + ", " + horses[pick - 1].horseName + ", who placed in #" + place + ".";
+    message = "You bet on horse " + pick + ", " + horses[pick - 1].horseName + ", who placed in #" + beaten + ".";
     chips += Math.round(wager * mult);
 }
 
