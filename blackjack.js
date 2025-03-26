@@ -29,6 +29,7 @@ function Start()
     if (cookie.includes(";"))
     {
         chips = cookie.slice(6).substring(0, cookie.length - 6);
+        document.cookie = "chips=" + chips + "; domain=.evenmorefries.github.io;";
     }
     console.log(cookie);
     CreateDeck();
