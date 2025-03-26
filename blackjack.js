@@ -19,7 +19,7 @@ let chips = 200; // load from cookies
 
 function reset()
 {
-    document.cookie = "chips=200; domain=.evenmorefries.github.io;";
+    document.cookie = "chips=" + chips + "; domain=.evenmorefries.github.io;";
 }
 
 function Start()
@@ -129,7 +129,7 @@ function EndGame()
 
 function Update()
 {
-    document.cookie = "chips=${chips}; domain=.evenmorefries.github.io;";
+    document.cookie = "chips=" + chips + "; domain=.evenmorefries.github.io;";
     chipsText.textContent = "Chips: "+ chips;
     if (!ended)
     {
