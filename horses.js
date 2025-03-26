@@ -18,6 +18,7 @@ let time = 0;
 let deltaTime = 0;
 let beaten = 0;
 let figuredBeaten = false;
+let winCount = 0;
 let chips = 200;
 let chipsText = document.getElementById("chipsText");
 
@@ -182,29 +183,21 @@ function Update()
         {
             changeTimer += deltaTime;
         }
-        let winCount = 0;
+        winCount = 0;
         horses.forEach(horse =>
         {
         if(horse.x > Canvas.width - 60)
         {
             winCount++;
-            horse.won = true;
             if (horse = horses[pick - 1] && horse.won == false)
             {
                 beaten = winCount;
             }
+            horse.won = true;
         }
         if (horse.won)
         {
             horse.currentSpeed = 0;
-        }
-        if (winCount == 4)
-        {
-            if(!over)
-            {
-                Win();
-            }
-            over = true;
         }
         if (changeTimer > 1.5)
         {
@@ -241,6 +234,14 @@ function Update()
             horse.currentSpeed -= deltaTime / 3;
         }
         });
+        if (winCount == 4)
+        {
+            if(!over)
+            {
+                Win();
+            }
+            over = true;
+        }
     }
     if (changeTimer > 1.5)
     {
