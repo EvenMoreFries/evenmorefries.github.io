@@ -25,7 +25,10 @@ function Start()
 {
     let cookie = document.cookie;
     chips = 200;
-    chips = cookie.slice(6).substring(0, cookie.length - 6);
+    if (cookie.includes("chips="))
+    {
+        chips = cookie.slice(6).substring(0, cookie.length - 6);
+    }
     console.log(cookie + " " + cookie.slice(6).substring(0, cookie.length - 6))
     wheelImg.src = "./images/wheel.png";
     time = Date.now();
@@ -33,6 +36,7 @@ function Start()
 
 function Update()
 {
+    document.cookie = "chips=${chips}; domain=.evenmorefries.github.io;";
     Context.clearRect(0, 0, Canvas.width, Canvas.height);
     let message = "";
     if (first == 0)
@@ -73,7 +77,7 @@ function Update()
             }
             going = 0;
             chips += prize;
-            document.cookie = "chips=" + chips +"; domain=.evenmorefries.github.io;";
+            document.cookie = "chips=${chips}; domain=.evenmorefries.github.io;";
             won = 1;
         }
         if (prize == 0)
@@ -87,7 +91,7 @@ function Update()
         if (prize == -1)
         {
             chips = 0;
-            document.cookie = "chips=" + 0 +"; domain=.evenmorefries.github.io;";
+            document.cookie = "chips=${chips}; domain=.evenmorefries.github.io;";
             cost = 0;
             message = "You're bankrupt! Remember that real gamblers never quit. Here is one free spin."
         }
@@ -110,7 +114,7 @@ function Play()
     {
         going = true;
         first = 1;
-        chips -= 100;
+        chips -= cost;
         document.cookie = "chips=" + chips +"; domain=.evenmorefries.github.io;";
         cost = 100;
         won = 0;

@@ -129,7 +129,7 @@ function EndGame()
 
 function Update()
 {
-    document.cookie = "chips=" + chips +"; domain=.evenmorefries.github.io;";
+    document.cookie = "chips=${chips}; domain=.evenmorefries.github.io;";
     chipsText.textContent = "Chips: "+ chips;
     if (!ended)
     {
