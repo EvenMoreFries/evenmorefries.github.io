@@ -25,11 +25,14 @@ let chipsText = document.getElementById("chipsText");
 function Start()
 {
     let cookie = document.cookie;
-    chips = 200;
-    if (cookie.length < 7)
+    if (cookie.length > 6)
     {
         chips = cookie.slice(6).substring(0, cookie.length - 6);
         document.cookie = "chips=" + chips + "; domain=.evenmorefries.github.io;";
+    }
+    else
+    {
+        chips = 200;
     }
     Canvas.width = window.innerWidth;
     CreateHorse();

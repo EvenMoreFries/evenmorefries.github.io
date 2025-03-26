@@ -24,11 +24,14 @@ let jackpot = 0;
 function Start()
 {
     let cookie = document.cookie;
-    chips = 200;
-    if (cookie.length < 7)
+    if (cookie.length > 6)
     {
         chips = cookie.slice(6).substring(0, cookie.length - 6);
         document.cookie = "chips=" + chips + "; domain=.evenmorefries.github.io;";
+    }
+    else
+    {
+        chips = 200;
     }
     console.log(cookie + " " + cookie.slice(6).substring(0, cookie.length - 6))
     wheelImg.src = "./images/wheel.png";
