@@ -26,7 +26,7 @@ function Start()
 {
     let cookie = document.cookie;
     chips = 200;
-    if (cookie.includes(";"))
+    if (cookie.length < 7)
     {
         chips = cookie.slice(6).substring(0, cookie.length - 6);
         document.cookie = "chips=" + chips + "; domain=.evenmorefries.github.io;";
